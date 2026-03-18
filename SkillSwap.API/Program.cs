@@ -1,3 +1,8 @@
+using SkillSwap.API.Repositories.Implementations;
+using SkillSwap.API.Repositories.Interfaces;
+using SkillSwap.API.Services.Implementations;
+using SkillSwap.API.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+builder.Services.AddScoped<ISkillService, SkillService>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
