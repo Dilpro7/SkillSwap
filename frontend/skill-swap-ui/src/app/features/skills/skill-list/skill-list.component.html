@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h2>Skills</h2>
+
+  <!-- Add Skill -->
+  <div class="add-box">
+    <input [(ngModel)]="newSkill" placeholder="Enter skill name">
+    <button (click)="addSkill()">Add</button>
+  </div>
+
+  <!-- Skill List -->
+  <ul>
+    <li *ngFor="let skill of skills; let i = index">
+
+      <span *ngIf="editIndex !== i">
+        {{ skill.name }}
+        <button class="edit" (click)="startEdit(i)">Edit</button>
+        <button class="delete" (click)="deleteSkill(i)">Delete</button>
+      </span>
+
+      <span *ngIf="editIndex === i">
+        <input [(ngModel)]="editSkillName">
+        <button class="save" (click)="saveEdit(i)">Save</button>
+      </span>
+
+    </li>
+  </ul>
+
+</div>
