@@ -19,6 +19,7 @@ namespace SkillSwap.API.Middleware
             Console.WriteLine($"Request: {method} {path} at {DateTime.Now}");
 
             await _next(context);
+            //This is a middleware file
         }
     }
 }
