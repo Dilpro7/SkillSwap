@@ -14,6 +14,6 @@
         public RequestStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }= DateTime.UtcNow;
         public User? Sender { get; set; }
-        public User? Receiver { get; set; }
+        public User? Receiver { get; set; }//users who receive the request
     }
 }
